@@ -60,8 +60,9 @@ class HomeActivity : AppCompatActivity() {
     private fun getUserData() {
 
         dbref = FirebaseDatabase.getInstance().getReference("")
+        val userList = databaseRefrence?.child("User")?.orderByChild("email")
 
-        dbref.addValueEventListener(object : ValueEventListener{
+        userList.addValueEventListener(object : ValueEventListener{
 
             override fun onDataChange(snapshot: DataSnapshot) {
 
